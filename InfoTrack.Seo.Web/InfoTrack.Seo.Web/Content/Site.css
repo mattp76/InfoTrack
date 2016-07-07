@@ -49,16 +49,16 @@ form {
 }
 
 .searchResults {
-    padding:20px;
-    border:3px solid #ccc;
-    background-color:#fff;
-    font-size:20px;
+    padding:10px;
+    border-top:1px solid #ccc;
+    background-color:#f8f8f8;
 }
 
 .searchResults .positions{
-    font-size:20px;
+    font-size:15px;
     margin-top:25px;
     display:block;
+    font-weight:bold;
 }
 
 mark {

@@ -28,7 +28,7 @@ namespace InfoTrack.Seo.Web.Controllers
 
 
         [HttpPost]
-        public ActionResult Search(SearchModel searchModel)
+        public ActionResult Index(SearchModel searchModel)
         {
             if (ModelState.IsValid)
             {
