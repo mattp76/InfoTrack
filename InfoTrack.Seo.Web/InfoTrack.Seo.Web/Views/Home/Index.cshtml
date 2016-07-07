@@ -1,0 +1,36 @@
+﻿@model InfoTrack.Seo.Web.Models.SearchModel
+
+
+
+<div class="infotrack-title">
+
+</div>
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Post, new { role = "form", @class = "form-horizontal", id = "SearchForm" }))
+{
+    
+    @Html.AntiForgeryToken();
+    
+    <label>Url</label>
+    @Html.TextBoxFor(m => m.Url);
+    <label>Keyword</label>
+    @Html.TextBoxFor(m => m.Term);
+    <br/><button type="submit" class="btn btn-default">Submit</button>
+
+}
+
+@if (!string.IsNullOrEmpty(Model.Term) && !string.IsNullOrEmpty(Model.Term))
+{
+    <div id="searchResults">
+        The term we searched: @Model.Term
+        <br/>The relevant Url: @Model.Url
+
+            @if (Model.Positions.Count > 0)
+            {
+                <span id="positions">Its position in Google: @Model.Positions</span>
+             }else {
+                <span id="positions">@Model.Term does not appear under the search term: @Model.Term</span>
+             }
+    </div>
+}
+
