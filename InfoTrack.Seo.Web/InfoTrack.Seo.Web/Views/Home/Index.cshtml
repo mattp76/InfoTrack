@@ -13,7 +13,7 @@
     
     <label>Url</label>
     @Html.TextBoxFor(m => m.Url);
-    <label>Keyword</label>
+    <label>Keywords</label>
     @Html.TextBoxFor(m => m.Term);
     <br/><button type="submit" class="btn btn-default">Submit</button>
 
@@ -21,16 +21,16 @@
 
 @if (!string.IsNullOrEmpty(Model.Term) && !string.IsNullOrEmpty(Model.Term))
 {
-    <div id="searchResults">
-        The term we searched: @Model.Term
-        <br/>The relevant Url: @Model.Url
-
+    <div class="searchResults">
+        <p>
             @if (Model.Positions.Count > 0)
             {
-                <span id="positions">Its position in Google: @Model.Positions</span>
-             }else {
-                <span id="positions">@Model.Term does not appear under the search term: @Model.Term</span>
+                <span class="positions">Google position(s): @string.Join(",", Model.Positions)</span>
+            
+            }else {
+                <span class="positions">No results</span>
              }
+        </p>
     </div>
 }
 
